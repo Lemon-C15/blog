@@ -1,0 +1,48 @@
+/////
+冒泡排序
+for(j=0;j<n-1;j++){////for(j=1;j<n;j++)//不等于最后一个
+    for(i=0;i<n-1-j;i++){////for(i=1;i<=n-j;i++)//不等于最后一个
+        if(a>b){
+            t=a;
+            a=b;
+            b=t;
+        }
+    }
+}
+
+
+/////
+快排
+void sort1(int l,int r){//快排
+    if(l>=r) return;
+    int i=l,j=r;
+    int x = a[l];
+    while(i != j)
+    {
+        while(i < j && a[j] <=x) //改变符号即可降序
+            j--;     
+        while(i < j && a[i]>= x)
+            i++;
+        int t;
+        t=a[i];
+        a[i] = a[j];
+        a[j] = t;
+    }
+    a[l]=a[i];
+    a[i]=x;   
+    sort1(l, i - 1);
+    sort1(i + 1, r);
+}
+
+/////
+二分
+int Binary_search(int array[], int l, int r, int x){
+    int mid=(l+r)/2;
+    while(l<=r){
+        if(array[mid]==x) return mid;
+        if(x<array[mid]) r=mid-1;
+        else l=mid+1;
+        mid=(l+r)/2;//****
+    }
+    return -1;
+}

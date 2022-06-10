@@ -1,3 +1,7 @@
+
+abc,,de,g,,f,,,前序
+输出中序后序
+```c++
 #include <bits/stdc++.h>
 using namespace std;
 char a[55];
@@ -51,3 +55,4 @@ int main(){
     }
    return 0;
 }
+```

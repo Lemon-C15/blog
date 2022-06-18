@@ -55,9 +55,9 @@
     ///将Vector数组A,B的元素进行整体交换   
         A.swap(B); //B为向量，将A中的元素和B中的元素进行整体性交换
 
-#11.use
+# 11.use
 
-   ##include"algorithm"//要添加此头文件
+   ## nclude"algorithm"//要添加此头文件
 
    （1）sort( A.begin() , A.end() ); //对a中的从A.begin()（包括它）到A.end()（不包括它）的元素进行从小到大排列
 

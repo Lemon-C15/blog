@@ -14,7 +14,7 @@
    vector <int> A2(A1);  //通过A1来初始化A2
 
 //5.通过地址访问
-   vector<int> A1 {1,2,3,4,5};        //一维
+   ///vector<int> A1 {1,2,3,4,5};        //一维
    vector<int>::iterator k=A1.begin();//返回第一个元素的地址
    cout<<*k<<endl;     //输出1
    cout<<*(k+1)<<endl; //输出2
@@ -22,8 +22,8 @@
    cout<<*(k-1)<<endl; //输出5
 
 //6.通过下标访问
-   vector<int> A1 {1,2,3,4,5}; //一维
-   cout<<A1.at(0)<<endl;       //输出为1
+   ///vector<int> A1 {1,2,3,4,5}; //一维
+   ///cout<<A1.at(0)<<endl;       //输出为1
    
 //7.添加,删除
    * A.pop_back();      //删除最后一个元素//只能删最后一个

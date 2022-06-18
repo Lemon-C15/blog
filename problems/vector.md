@@ -41,6 +41,7 @@
    cout<<A1.empty()<<endl;//输出0
 
 //10.other
+
     ///返回可用总元素
         A.capacity(); //返回A在内存中总共可以容纳的元素个数
         
@@ -55,7 +56,8 @@
         A.swap(B); //B为向量，将A中的元素和B中的元素进行整体性交换
 
 //11.
-#include<algorithm>//要添加此头文件
+#include"algorithm"//要添加此头文件
+
 （1）sort( A.begin() , A.end() ); //对a中的从A.begin()（包括它）到A.end()（不包括它）的元素进行从小到大排列
 
 （2）reverse(A.begin(),A.end()); //对A中的从A.begin()（包括它）到A.end()（不包括它）的元素倒置，但不排列，如A中元素为1,3,2,4,倒置后为4,2,3,1

@@ -26,19 +26,19 @@
    cout<<A1.at(0)<<endl;       //输出为1
    
 //7.添加,删除
-   A.pop_back();      //删除最后一个元素//只能删最后一个
-   A.push_back(elem); //在尾部添加一个元素
+   * A.pop_back();      //删除最后一个元素//只能删最后一个
+   * A.push_back(elem); //在尾部添加一个元素
 
 //8.特定位置插入删除
-   vector<int> A1 {1,2,3,4,5};        //一维
-   vector<int>::iterator k=A1.begin();//下标从0开始
-   A1.insert(k+1,9);                  //A1={1,9,2,3,4,5}
+   - vector<int> A1 {1,2,3,4,5};        //一维
+   - vector<int>::iterator k=A1.begin();//下标从0开始
+   - A1.insert(k+1,9);                  //A1={1,9,2,3,4,5}
    A1.erase(k+1);                     //A1={1,3,4,5}
 
 //9.获取长度或者判断数组是否为空
-   vector<int> A1 {1,2,3,4,5};//一维
-   cout<<A1.size()<<endl;//输出5
-   cout<<A1.empty()<<endl;//输出0
+   + vector<int> A1 {1,2,3,4,5};//一维
+   + cout<<A1.size()<<endl;//输出5
+   + cout<<A1.empty()<<endl;//输出0
 
 //10.other
 

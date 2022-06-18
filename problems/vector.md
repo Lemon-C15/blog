@@ -57,15 +57,15 @@
 
 //11.use
 
-   //#include"algorithm"//要添加此头文件
+   #include"algorithm"//要添加此头文件
 
-   ///（1）sort( A.begin() , A.end() ); //对a中的从A.begin()（包括它）到A.end()（不包括它）的元素进行从小到大排列
+   （1）sort( A.begin() , A.end() ); //对a中的从A.begin()（包括它）到A.end()（不包括它）的元素进行从小到大排列
 
-   ///（2）reverse(A.begin(),A.end()); //对A中的从A.begin()（包括它）到A.end()（不包括它）的元素倒置，但不排列，如A中元素为1,3,2,4,倒置后为4,2,3,1
+   （2）reverse(A.begin(),A.end()); //对A中的从A.begin()（包括它）到A.end()（不包括它）的元素倒置，但不排列，如A中元素为1,3,2,4,倒置后为4,2,3,1
 
-   ///（3）copy(A.begin(),A.end(),B.begin()+1); //把A中的从A.begin()（包括它）到A.end()（不包括它）的元素复制到B中，从B.begin()+1的位置（包括它）开始复制，覆盖掉原有元素
+   （3）copy(A.begin(),A.end(),B.begin()+1); //把A中的从A.begin()（包括它）到A.end()（不包括它）的元素复制到B中，从B.begin()+1的位置（包括它）开始复制，覆盖掉原有元素
 
-   ///（4）find(A.begin(),A.end(),10); //在A中的从A.begin()（包括它）到A.end()（不包括它）的元素中查找10，若存在返回其在向量中的位置
+   （4）find(A.begin(),A.end(),10); //在A中的从A.begin()（包括它）到A.end()（不包括它）的元素中查找10，若存在返回其在向量中的位置
   
 
 

@@ -15,8 +15,8 @@
 
 # useful： 
 
-* (auto &x : p)//遍历p向量/数组里的所有且引用，让x==it；
-* (auto x ： p）//遍历但不改变值
+* for(auto &x : p) cout<<i<<endl //遍历p向量/数组里的所有且引用，让x==it；
+* for(auto x ： p) cout<<i<<endl //遍历但不改变值
 
 # knowledge point
 ## STL

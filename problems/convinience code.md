@@ -36,4 +36,5 @@
     ...
   }
   ```
-
+## std :: cout
+* std 就是你没有using namespace std;时int main 里的每一句都要加std：：不然就会运行错误

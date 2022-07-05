@@ -39,7 +39,9 @@
 //9.获取长度或者判断数组是否为空
    + vector<int> A1 {1,2,3,4,5};//一维
    + cout<<A1.size()<<endl;//输出5
-   + cout<<A1.empty()<<endl;//输出0
+   + cout<<A1.empty()<<endl;//输出0，空返回1
+   + arr.front();返回的是第一个元素的引用。
+   + arr.back();返回的的是最后一个元素的引用。
 
 //10.other
 

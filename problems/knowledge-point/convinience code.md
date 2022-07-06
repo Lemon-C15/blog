@@ -17,11 +17,15 @@
 
 * for(auto &x : p) cout<<x<<endl //遍历p向量/数组里的所有且引用，让x==it；
 * for(auto x ： p) cout<<x<<endl //遍历但不改变值
+* unique(a.begin(),a.end());//去重,将重复的元素移动到最后,返回尾巴后一个，
+重复元素第一个的坐标，是个迭代器
+* a.erase(unique(a.begin,a.end()),a.end);此时把尾巴删掉
 
 # knowledge point
 ## STL
 * q.emplace(i,j)//将 i 插入到 j 位置
 * q.top().first //返回第一个值
+
 
 ## signed main
  ```c++

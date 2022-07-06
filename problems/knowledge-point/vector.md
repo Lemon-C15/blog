@@ -35,6 +35,7 @@
    - vector<int>::iterator k=A1.begin();//下标从0开始
    - A1.insert(k+1,9);                  //A1={1,9,2,3,4,5}
    - A1.erase(k+1);                     //A1={1,3,4,5}
+     - erase通常用迭代器，A1.erase(A1.begin+i,A1.begin+i+x),表示从i开始删除x个，左闭右开； 
 
 //9.获取长度或者判断数组是否为空
    + vector<int> A1 {1,2,3,4,5};//一维

@@ -33,9 +33,9 @@
 //8.特定位置插入删除
    - vector<int> A1 {1,2,3,4,5};        //一维
    - vector<int>::iterator k=A1.begin();//下标从0开始
-   - A1.insert(k+1,9);                  //A1={1,9,2,3,4,5}
+   - A1.insert(k+1,9);//迭代器k                 //A1={1,9,2,3,4,5}
    - A1.erase(k+1);                     //A1={1,3,4,5}
-     - erase通常用迭代器，A1.erase(A1.begin+i,A1.begin+i+x),表示从i开始删除x个，左闭右开； 
+     - erase通常用迭代器，A1.erase(A1.begin+i,A1.begin+i+x),表示从i开始删除x个，左闭右开.指向下一个； 
 
 //9.获取长度或者判断数组是否为空
    + vector<int> A1 {1,2,3,4,5};//一维
@@ -69,7 +69,7 @@
 
       - （3）copy(A.begin(),A.end(),B.begin()+1); //把A中的从A.begin()（包括它）到A.end()（不包括它）的元素复制到B中，从B.begin()+1的位置（包括它）开始复制，覆盖掉原有元素
 
-      - （4）find(A.begin(),A.end(),10); //在A中的从A.begin()（包括它）到A.end()（不包括它）的元素中查找10，若存在返回其在向量中的位置
+      - （4）find(A.begin(),A.end(),10); //在A中的从A.begin()（包括它）到A.end()（不包括它）的元素中查找10，若存在返回其在向量中的位置，从0开始，或者减a.begin();
 
 ******
 ```c++
@@ -88,7 +88,7 @@ int main(){
     a.pop_back();//尾巴out
     vector<int> ::iterator k=a.begin();//迭代使k=开始
     a.insert(k+5,0);//插入0
-    a.erase(k);//删除下标所指
+    a.erase(k);//删除下标所指,迭代器
     cout<<a.size()<<endl;//长度
     cout<<a.capacity()<<endl;//返回可用内存
     sort(a.begin(),a.end());//排序

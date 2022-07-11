@@ -69,3 +69,19 @@
   ```
 ## std :: cout
 * std 就是你没有using namespace std;时int main 里的每一句都要加std：：不然就会运行错误
+## 素数
+* 求素数边界不用n,用sqrt(n),缩小范围
+* 素数筛法，筛选1到maxn的素数
+```c++
+void prim(){//if每一个数都要判断一遍，太慢了
+    for(int i=2;i<maxn;i++) vis[i]=1;//初始化1
+    vis[0]=vis[1]=0;
+    top=0;
+    for(int i=2;i<maxn;i++){
+        if(vis[i]==1){
+            prime[++top]=i;//数组
+            for(int j=2*i;j<maxn;j+=i) vis[j]=0;
+        }
+    }
+}
+```

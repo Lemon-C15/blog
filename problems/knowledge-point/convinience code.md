@@ -37,6 +37,15 @@
 * unique(a.begin(),a.end());//去重,将重复的元素移动到最后,返回尾巴后一个，
 重复元素第一个的坐标，是个迭代器
 * a.erase(unique(a.begin,a.end()),a.end);此时把尾巴删掉
+* sort排序
+  * sort(a,a+n);数字
+  * sort默认小到大
+  * greater使内置函数从大到小排序，而less使的内置函数从小到大排序。
+  * sort(a,a+10,greater());
+  * sort(a,a+10,less()); 
+  * //priority_queue用法如下：从小到大
+    * priority_queue<int,vector,greater >que;
+    * priority_queue <ll,vector<ll>,greater<ll> > pq; 
 
 # knowledge point
 ## STL

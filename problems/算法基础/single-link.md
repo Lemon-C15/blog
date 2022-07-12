@@ -43,3 +43,58 @@ void remove(int k){
     ne[k]=ne[ne[k]];
 }
 ```
+## 静态链表例题
+* 给一堆操作数，H对应在头节点插入x，D表示删除第k个插入的数后面的数，不是第k个数，若k=0，表示删除头节点，I表示在第k个插入的数后面插一个数x
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+const int N = 1e5+10;
+int head,e[N],ne[N],idx;
+void init(){
+    idx=0;
+    head=-1;
+}
+void int_to_head(int x){
+    e[idx]=x;
+    ne[idx]=head;
+    head=idx;
+    idx++;
+}
+void add(int k,int x){
+    e[idx]=x;
+    ne[idx]=ne[k];
+    ne[k]=idx;
+    idx++;
+}
+void remove(int k){
+    ne[k]=ne[ne[k]];
+}
+int main(){
+    int n;
+    init();//初始化
+
+    cin>>n;
+    while(n--){
+        char s;
+        cin>>s;
+        if(s=='H'){
+            int x;
+            cin>>x;
+            int_to_head(x);
+        }
+        else if(s=='D'){
+            int k;
+            cin>>k;
+            if(k==0) head=ne[head];//删除头节点，直接操作就行
+            else remove(k-1);//下标要-1，输入的是第k个，从1开始
+        }
+        else if(s=='I'){
+            int k,x;
+            cin>>k>>x;
+            add(k-1,x);
+        }
+    }
+    for(int i=head;i!=-1;i=ne[i]) cout<<e[i]<<" ";//结尾是-1，i=i->next
+    return 0;
+}
+```

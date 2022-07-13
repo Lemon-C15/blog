@@ -1,9 +1,9 @@
 # funtion：
 
-* 1.rotate(left,mid,right);
+* rotate(left,mid,right);
   //使数组或向量往后退，最后一个到前面，循环几次看mid和right差值，left和right表范围
 
-* 2.int tolower(int c);
+* int tolower(int c);
   //大小写转换.函数说明：若参数 c 为 大写字母 则将该对应的小写字母返回。
   ```c++
   #include <ctype.h>
@@ -23,19 +23,34 @@
   //before tolower() : aBcDeFgH12345;!#$
   //after tolower() : abcdefgh12345;!#$
   ```
-* 3.str=str.replace(str.find("a"),2,"#");//find返回下标
+* str=str.replace(str.find("a"),2,"#");//find返回下标
   //从第一个a位置开始的两个字符替换成#，取代 he is@ a@ good boy -> he is@ # good boy
 
-* 4.#define rep(i,a,b) for(int i=a;i<=b;i++)
+* #define rep(i,a,b) for(int i=a;i<=b;i++)
     #define nrep(i,a,b) for(int i=a;i>=b;i--)
     //自定义函数
 
-# useful： 
+* unordered_map捆版表
+  * //优先级表，将符号和等级关联
+  ```c++
+      unordered_map<char, int> h{ {'+', 1}, {'-', 1}, {'*',2}, {'/', 2} };
+      char c="+",C="*";
+      if(h[C]>h[c]) cout<<"yes"；
+  ```
+
+* isdigit(c)判断c是不是十进制数
+  ```c++
+    string s;
+    auto c = str[i];//可以是string
+    if (isdigit(c)) cout<<1;
+  ``` 
+
+# useful：
+* 判断是否是数字 if (isdigit(x)) {}
 * s[]的长度，i<sizeof(s)可简单遍历
 * for(auto &x : p) cout<<x<<endl //遍历p向量/数组里的所有且引用，让x==it；
 * for(auto x ： p) cout<<x<<endl //遍历但不改变值
-* unique(a.begin(),a.end());//去重,将重复的元素移动到最后,返回尾巴后一个，
-重复元素第一个的坐标，是个迭代器
+* unique(a.begin(),a.end());//去重,将重复的元素移动到最后,返回尾巴后一个，重复元素第一个的坐标，是个迭代器
 * a.erase(unique(a.begin,a.end()),a.end);此时把尾巴删掉
 * sort排序
   * sort(a,a+n);数字

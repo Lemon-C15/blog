@@ -118,3 +118,75 @@ int main(){
     return 0;
 }
 ```
+3. 
+* https://www.luogu.com.cn/problem/P3375
+* 1. 多次输出符合的字符串的第一个元素的下标 ，从1开始
+  2. 输出每个位置的前缀长度
+* 思路：next数组表示的是前一个的前缀长度
+```c++
+in
+ABABABC
+ABA
+
+out
+1
+3
+0 0 1 
+```
+```c++
+#include <bits/stdc++.h>
+#include <cstring>
+using namespace std;
+const int N = 1e5+10;
+char s1[N],s2[N];
+void getnext(int next[],int l2){
+    int i=0,k=-1;
+    next[0]=-1;
+    while(i<l2){
+        if(k==-1||s2[i]==s2[k]){
+            i++;
+            k++;
+            next[i]=k;
+        }
+        else{
+            k=next[k];
+        }
+    }
+}
+
+void kmp(int next[],int l1,int l2){
+    int i=0,k=0;
+    next[0]=-1;
+    while(i<l1&&k<=l2){
+        if(s1[i]==s2[k]||k==-1){
+            i++;
+            k++;
+        }
+        else{
+            k=next[k];
+        }
+        if(k==l2){
+            cout<<i-l2+1<<endl;
+            k=next[k];
+        }
+    }   
+    //else return -1;
+}
+
+int main(){
+    int next[N];
+    int l1,l2;
+    cin>>s1;
+    l1=strlen(s1);
+    //cout<<l1<<endl;
+    cin>>s2;
+    l2=strlen(s2);
+    getnext(next,l2);
+    kmp(next,l1,l2);
+    //next[1]=-1;
+    for(int i=1;i<=l2;i++){//表示i之前的有多长，i=1表示i=0位置的前缀长度
+        cout<<next[i]<<" ";       
+    }
+    return 0;
+}
+```

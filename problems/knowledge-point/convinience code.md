@@ -1,8 +1,6 @@
-# funtion：
-
+# funtion
 * rotate(left,mid,right);
   //使数组或向量往后退，最后一个到前面，循环几次看mid和right差值，left和right表范围
-
 * int tolower(int c);
   //大小写转换.函数说明：若参数 c 为 大写字母 则将该对应的小写字母返回。
   ```c++
@@ -48,10 +46,10 @@
 # useful：
 * 判断是否是数字 if (isdigit(x)) {}
 * s[]的长度，i<sizeof(s)可简单遍历
-* for(auto &x : p) cout<<x<<endl //遍历p向量/数组里的所有且引用，让x==it；
-* for(auto x ： p) cout<<x<<endl //遍历但不改变值
+* for(auto &x : p) cout<<x<<endl ..遍历p向量..数组里的所有且引用，让x=it；
+* for(auto x ： p) cout<<x<<endl ..遍历但不改变值
 * unique(a.begin(),a.end());//去重,将重复的元素移动到最后,返回尾巴后一个，重复元素第一个的坐标，是个迭代器
-* a.erase(unique(a.begin,a.end()),a.end);此时把尾巴删掉
+* a.erase(unique(a.begin(),a.end()),a.end);此时把尾巴删掉
 * sort排序
   * sort(a,a+n);数字
   * sort默认小到大

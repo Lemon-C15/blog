@@ -1,0 +1,110 @@
+# Trie 字典树
+* 不断走已经走过的路，或者延申，结尾标记++
+## 例题
+1. 题目概括：多组字符串，询问其中某一条出现了多少次
+* https://www.acwing.com/problem/content/837/
+* 思路：字典树延申
+```c++
+#include <iostream>
+
+using namespace std;
+
+const int N = 100010;
+
+int son[N][26], cnt[N], idx;
+char str[N];
+
+void insert(char *str)
+{
+    int p = 0;
+    for (int i = 0; str[i]; i ++ )//遍历到尾节点
+    {
+        int u = str[i] - 'a';//son是节点，每个节点独一无二的，对应idx
+        if (!son[p][u]) son[p][u] = ++ idx;//有就跳，没就new,递进关系
+        p = son[p][u];//p和u对应idx，可以认为idx包含了层级和字母等各种因素且独一无二
+        // u是连的下一个点，p到u，p和son都可以理解为点，p不断跳到目标点
+        // 因为可能重复，所以需要u，双变量
+    }
+    cnt[p] ++ ;//尾，到了这个点
+}
+
+int query(char *str)
+{
+    int p = 0;
+    for (int i = 0; str[i]; i ++ )
+    {
+        int u = str[i] - 'a';
+        if (!son[p][u]) return 0;//没有出现过
+        p = son[p][u];
+    }
+    return cnt[p];//到了
+}
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+    while (n -- )
+    {
+        char op[2];
+        scanf("%s%s", op, str);
+        if (*op == 'I') insert(str);//head
+        else printf("%d\n", query(str));
+    }
+
+    return 0;
+}
+```
+2. 题目概括：问一堆数的二进制互相异或得到的最大值
+* https://www.acwing.com/problem/content/145/
+* 思路：字典树，结点只有2个0或1，有另外一条路就走另外一条，ans++；
+```c++
+#include <iostream>
+#include <algorithm>
+using namespace std;
+const int N=1e5+10;
+const int M=N*31;
+int a[N];
+int son[M][2],idx=1;
+int n;
+
+void insert(int x){
+    int p=0;
+    for(int i=30;i>=0;i--){
+        int u=x>>i&1;
+        if(!son[p][u]) son[p][u]=idx++;//下标从1开始
+        p=son[p][u];
+    }
+}
+
+int find(int x){
+    int p=0,ans=0;
+    for(int i=30;i>=0;i--){
+        int u=x>>i&1;
+        //cout<<u<<endl;
+        if(son[p][!u]){//如果有数，里面是idx
+            p=son[p][!u];
+            ans=ans*2+1;//相当于左移一位再+1，因为异或
+        }
+        else{
+            p=son[p][u];
+            ans=ans*2;
+        }
+    }
+    return ans;
+}
+
+int main(){
+    cin>>n;
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+        insert(a[i]);
+    }
+    int ans=0;
+    for(int i=0;i<n;i++){//每一个数都要走
+        ans=max(find(a[i]),ans);
+    }
+    cout<<ans<<endl;
+    return 0;
+}
+```

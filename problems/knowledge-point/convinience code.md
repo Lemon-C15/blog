@@ -1,3 +1,17 @@
+# title
+```c++
+#include<iostream>
+#include<algorithm>
+#include<map>
+#include<queue>
+#include<vector>
+#include<set>
+#include<cstring>
+#include<math.h>
+#define ll long long
+#define IOS ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+#define endl '\n'
+```
 # funtion
 * rotate(left,mid,right);
   //使数组或向量往后退，最后一个到前面，循环几次看mid和right差值，left和right表范围

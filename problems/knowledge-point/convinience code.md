@@ -15,6 +15,7 @@
 # funtion
 * rotate(left,mid,right);
   //使数组或向量往后退，最后一个到前面，循环几次看mid和right差值，left和right表范围
+* memset(a,t,sizeof(a))函数中，只能全部初始化为0或-1，如果t为其他数，则会全部初始化为一个大数，memset(a,63,sizeof a).a中的都为0x3f3f3f3f3f,0x3f=63;
 * int tolower(int c);
   //大小写转换.函数说明：若参数 c 为 大写字母 则将该对应的小写字母返回。
   ```c++
@@ -58,6 +59,7 @@
   ``` 
 
 # useful：
+* ~i代表i!=-1;
 * 判断是否是数字 if (isdigit(x)) {}
 * s[]的长度，i<sizeof(s)可简单遍历
 * for(auto &x : p) cout<<x<<endl ..遍历p向量..数组里的所有且引用，让x=it；

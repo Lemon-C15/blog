@@ -92,7 +92,7 @@ void bfs(int s) {
     //初始化
     dis[s] = 0;//距离
     q.push(s);//入队
-    vis[s] = 1;//sign
+    vis[s] = 1;//mark
     cnt[s] = 1;//最短条数
     //
     while (!q.empty()) {//非空时
@@ -106,7 +106,8 @@ void bfs(int s) {
                 cnt[e] = cnt[t];//到这里的路径数目和上一个点相同，因为第一次到
                 q.push(e);//in
                 vis[e] = 1;//sign
-            } else if (vis[e] && dis[e] == dis[t] + 1)////到过但不是之前的路
+            } 
+            else if (vis[e] && dis[e] == dis[t] + 1)////到过但不是之前的路
                 cnt[e] = (cnt[e] + cnt[t]) % mod;//路径数相加
         }
     }
@@ -121,7 +122,7 @@ signed main() {
         add(v, u);
     }
     bfs(1);//从1出发 
-    cout << cnt[n] << endl;
+    cout << cnt[n] << endl;//到n点
     return 0;
 }
 ```

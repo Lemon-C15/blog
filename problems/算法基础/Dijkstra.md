@@ -99,7 +99,6 @@ void bfs(int s) {
         int t = q.front();//引用第一个
         q.pop();//弹出
         for (int i = Head[t]; ~i; i = Next[i]) {//条件是i！=-1
-
             int e = Edge[i];//Edge对应的值//i代表各个下标，下标都在head[t]里面，head[t]是t点对于的其他连线的集合
             if (!vis[e]) {//未经过该点
                 dis[e] = dis[t] + 1;//能到该点，距离是上一个的距离+1
@@ -107,7 +106,7 @@ void bfs(int s) {
                 q.push(e);//in
                 vis[e] = 1;//sign
             } 
-            else if (vis[e] && dis[e] == dis[t] + 1)////到过但不是之前的路
+            else if (vis[e] && dis[e] == dis[t] + 1)////到过且距离相等但不是之前的路
                 cnt[e] = (cnt[e] + cnt[t]) % mod;//路径数相加
         }
     }

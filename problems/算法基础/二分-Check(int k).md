@@ -79,7 +79,7 @@ cout<<left<<endl;//输出结果
     using namespace std;
     int n,m;
     int a[100005];
-
+    
     int check(int k){
         int sum=0,ans=1;//此处ans应当赋值1 
         for(int i=0;i<n;i++){
@@ -110,4 +110,4 @@ cout<<left<<endl;//输出结果
         cout<<left<<endl;
         return 0;	
     } 
-```
+

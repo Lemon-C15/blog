@@ -27,7 +27,6 @@ void getnext(char s[],int len,int next[]){//形参加[]
             j=next[j];
         }
     }
-
 }
 
 int kmp(char s1[],int l1,char s2[],int l2,int next[]){

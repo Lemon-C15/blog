@@ -1,4 +1,5 @@
 # priority_queue(优先队列)
+
 ## 概念
 * 可以以o(log n) 的效率查找一个队列中的最大值或者最小值，其中是最大值还是最小值是根据创建的优先队列的性质来决定的。
 * 优先队列有三个参数，其声明形式为：priority_queue< type, container, function >
@@ -11,11 +12,12 @@
         * priority_queue<int,vector<int>,greater<int> > small_heap;  (small)//注意空格，不然变成右移运算符
 ## 样例
 ### 基本类型
+
 ```c++
 #include<iostream>
 #include <queue>
 using namespace std;
-int main()
+int main( )
 {
     //对于基础类型 默认是大顶堆
     priority_queue<int> a;

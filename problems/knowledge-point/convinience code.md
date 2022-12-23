@@ -13,11 +13,13 @@
 #define endl '\n'
 ```
 # funtion
-* rotate(left,mid,right);
-  //使数组或向量往后退，最后一个到前面，循环几次看mid和right差值，left和right表范围
+* rotate(left,mid,right);	
+  //使向量往后退，最后一个到前面，循环几次看mid和right差值，left和right表范围,left=vector.v=begin();
 * memset(a,t,sizeof(a))函数中，只能全部初始化为0或-1，如果t为其他数，则会全部初始化为一个大数，memset(a,63,sizeof a).a中的都为0x3f3f3f3f3f,0x3f=63;
 * int tolower(int c);
+* 默认int，要在前面加(char)
   //大小写转换.函数说明：若参数 c 为 大写字母 则将该对应的小写字母返回。
+
   ```c++
   #include <ctype.h>
   #include <stdio.h>
@@ -56,16 +58,17 @@
     string s;
     auto c = str[i];//可以是string
     if (isdigit(c)) cout<<1;
-  ``` 
+  ```
 
 # useful：
+* reverse :数字列反转
 * ~i代表i!=-1;
 * 判断是否是数字 if (isdigit(x)) {}
 * s[]的长度，i<sizeof(s)可简单遍历
 * for(auto &x : p) cout<<x<<endl ..遍历p向量..数组里的所有且引用，让x=it；
 * for(auto x ： p) cout<<x<<endl ..遍历但不改变值
 * unique(a.begin(),a.end());//去重,将重复的元素移动到最后,返回尾巴后一个，重复元素第一个的坐标，是个迭代器
-* a.erase(unique(a.begin(),a.end()),a.end);此时把尾巴删掉
+* a.erase(unique(a.begin(),a.end()),a.end());此时把尾巴删掉
 * sort排序
   * sort(a,a+n);数字
   * sort默认小到大
@@ -78,12 +81,13 @@
 
 # knowledge point
 ## STL
-* q.emplace(i,j)//将 i 插入到 j 位置
+* q.emplace(i,j)可代替push_back()，更加高效
 * q.top().first //返回第一个值
 * s[]是全局变量，会自动初始化成0
 
 
 ## signed main
+* 防止爆int
  ```c++
 #define ll long long//新定义
   int main(){
@@ -95,11 +99,12 @@
   signed main(){
     ...
   }
-  ```
+ ```
 ## std :: cout
 * std 就是你没有using namespace std;时int main 里的每一句都要加std：：不然就会运行错误
 ## 素数
 * 求素数边界不用n,用sqrt(n),缩小范围
+  * for(int i=2;i<=sqrt(n);i++);
 * 素数筛法，筛选1到maxn的素数
 ```c++
 void prim(){//if每一个数都要判断一遍，太慢了

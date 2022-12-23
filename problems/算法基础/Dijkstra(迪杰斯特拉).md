@@ -1,14 +1,20 @@
 # Dijkstra(迪杰斯特拉)
+
 * 应用：一种求解非负权图上单源最短路径的算法（单向）
+
 ## 流程
+
 1. 分两个集合。一个已确定到1点的最短路的点，一个未确定到1点的最短路的点
 2. 在未确定的点集挑一个**最短**的，初始化时1到1的距离是0，其他都是无穷，一般挑1
-3. 对这个点的所以关联的点求最短路，即1到这个点的距离加上这个点到关联点的距离，与1到关联点的距离比较，一般初始化未无穷，选小的
+3. 对这个点的所以关联的点求最短路，即1到这个点的距离加上这个点到关联点的距离，与1到关联点的距离比较，一般初始化为无穷，选小的
 4. 把该点放入已确定距离的集合，通过标记判断
 5. 重复n次
 ## 例题
-* 数多分布散用邻接表，数小分布密集用邻接表，否则容易超时
+
+* 数多分布散用邻接表，数小分布密集用邻接矩阵，否则容易超时
+
 ### 朴素版
+
 1. n*2n思路模板，邻接矩阵维护
 ```c++
 //https://www.acwing.com/problem/content/851/
@@ -24,12 +30,12 @@ int d[N][N];//矩阵
 bool st[N];
 int dis[N];
 int n , m ;
-int dijkstra(){
+int dijkstra(){//位运算赋值，1e9
     memset(dis,0x3f,sizeof(dis));//memset函数不是初始化为0x3f，而是2的0x3f方
     dis[1]=0;//一开始定义最小
     for(int j=1;j<=n;j++){
         int t;
-        int mind=0x3f3f3f3f;
+        int mind=0x3f3f3f3f;//数字赋值1e9
         for(int i=1;i<=n;i++)//find min
             if(!st[i]&&dis[i]<mind) t=i,mind=dis[i];
         st[t]=true;//mark
@@ -68,7 +74,8 @@ struct edge{
     int v,w;
 };
 vector<edge> e[N];//邻接表
-int dis[N],vis[N];//距离和搜索标记
+int dis[N];
+bovis[N];//距离和搜索标记
 void dijkstra(int n,int s){
     memset(dis,63,sizeof(dis));//memset二进制63位初始化为一个大数
     dis[s]=0;//到起点1

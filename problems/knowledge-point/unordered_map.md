@@ -1,4 +1,5 @@
 # unordered_map
+
 * unordered_map是一个将key和value关联起来的容器，它可以高效的根据单个key值查找对应的value。
 ## 基本操作
 * 定义：#include <unordered_map>
@@ -6,8 +7,7 @@
   * <string,int> umap;
   * <int,int> umap;
 * 插入：umap.insert()
-  * umap.insert("string",0);
-  * umap.insert(0,0);
+  * umap['*']=2;
   * umap.insert(pair<string,int>("apple",2));
 * 删除
   * 根据key删除,如果没找到n=0
@@ -48,6 +48,6 @@ int main(){
   * //优先级表，将符号和等级关联
   ```c++
       unordered_map<char, int> h{ {'+', 1}, {'-', 1}, {'*',2}, {'/', 2} };
-      char c="+",C="*";
-      if(h[C]>h[c]) cout<<"yes"；
+      char c='+,C='*';
+      if(h[C]>h[c]) cout<<"yes";
   ```
